@@ -1,0 +1,21 @@
+/* Container with Grid Layout */
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 2px; /* Space between the columns */
+    padding: 0px;
+  }
+  
+  /* First Column Styling */
+  .column:first-child {
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    gap: 2px; /* Space between cards */
+  }
+  
+  /* Second Column Styling */
+  .column:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align the Project Card to the top */
+  }

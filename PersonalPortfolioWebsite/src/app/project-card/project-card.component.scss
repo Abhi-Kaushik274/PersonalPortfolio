@@ -1,0 +1,45 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    max-width: 100%;
+  
+    .dashboard-content {
+      padding: 25px;
+  
+      .top-cards {
+        display: flex;
+        gap: 1rem;
+  
+        .total-balance-card {
+          // background: linear-gradient(135deg, #67d5b5, #619fda);
+          background-color: rgba(0, 0, 0, 0.4);
+          flex: 2;
+          padding: 1.5rem;
+          border-radius: 25px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          text-align: left;
+          height: 77.5vh;
+  
+          .btn {
+            margin-right: 1rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+  
+            &.transfer {
+              background-color: #fff;
+              color: #121212;
+            }
+  
+            &.topup {
+              background-color: #000;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }

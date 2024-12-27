@@ -1,0 +1,25 @@
+<div class="custom-navbar">
+    <div class="custom-navbar__logo">
+        <img src="../../assets/images/DashboardLogo.png" alt="Ethereal Logo" class="custom-navbar__logo-img" />
+    </div>
+  
+    <div class="custom-navbar__menu">
+      <span *ngFor="let item of menuItems" [class.active]="activeItem === item"
+        (click)="setActiveItem(item)" class="custom-navbar__menu-item">
+        {{ item }}
+      </span>
+    </div>
+  
+    <div class="custom-navbar__actions">
+      <button class="custom-navbar__actions-btn"><i class="bi bi-moon-fill"></i></button>
+      <button class="custom-navbar__actions-btn"><i class="bi bi-badge-3d"></i></button>
+      <!-- <button class="custom-navbar__actions-btn"><i class="fa-brands fa-unity"></i></button> -->
+      <!-- <i class="fa-brands fa-unity"></i> -->
+      <img src="../../assets/images/Default.png" alt="User Avatar" class="custom-navbar__avatar" style="width: 40px; height: 40px; border-radius: 50%;" />
+    </div>  
+  </div>  
+  
+  <!-- Conditionally show profile card -->
+  <div *ngIf="isProfileCardVisible" class="profile-card-overlay">
+    <!-- <app-profile-card #profileCard></app-profile-card> -->
+  </div>

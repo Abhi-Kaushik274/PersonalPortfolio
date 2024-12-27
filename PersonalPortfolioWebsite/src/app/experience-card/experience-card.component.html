@@ -2,10 +2,12 @@
     <div class="dashboard-content">
       <div class="top-cards">
         <div class="total-balance-card">
-          <!-- <h2>Total Balance</h2>
-          <h1>$120,456.50</h1>
-          <p>+2,456 revenue from last month</p>
-          <button class="btn transfer">Transfer</button>
-          <button class="btn topup">Top Up</button> -->
+          <div class="card-container" #cardContainer>
+            <ul class="cards">
+              <li *ngFor="let card of [1, 2, 3, 4, 5]">Card {{ card }}</li>
+            </ul>
+          </div>           
         </div>
       </div>
+    </div>
+</div>

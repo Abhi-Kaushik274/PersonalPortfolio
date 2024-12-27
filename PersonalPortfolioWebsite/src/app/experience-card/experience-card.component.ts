@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-experience-card',
-  standalone: false,
-  
+  imports: [CommonModule],
   templateUrl: './experience-card.component.html',
   styleUrl: './experience-card.component.scss'
 })

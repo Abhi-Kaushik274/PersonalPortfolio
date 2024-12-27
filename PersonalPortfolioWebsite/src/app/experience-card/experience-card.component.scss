@@ -1,45 +1,82 @@
 .dashboard-container {
-    display: flex;
-    flex-direction: column;
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
-    max-width: 100%;
-  
-    .dashboard-content {
-      padding: 25px;
-  
-      .top-cards {
-        display: flex;
-        gap: 1rem;
-  
-        .total-balance-card {
-          // background: linear-gradient(135deg, #67d5b5, #619fda);
-          background: rgba(0, 0, 0, 0.1);
-          flex: 2;
-          padding: 1.5rem;
-          border-radius: 25px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-          text-align: left;
-          height: 305px;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  max-width: 100%;
+  overflow-x: hidden; /* Hides overflow in the horizontal direction */
 
-          .btn {
-            margin-right: 1rem;
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-  
-            &.transfer {
-              background-color: #fff;
-              color: #121212;
-            }
-  
-            &.topup {
-              background-color: #000;
-              color: #fff;
-            }
-          }
-        }
+  .dashboard-content {
+    padding: 25px;
+
+    .top-cards {
+      display: flex;
+      gap: 1rem;
+
+      .total-balance-card {
+        background: rgba(0, 0, 0, 0.1);
+        flex: 2;
+        padding: 1.5rem;
+        border-radius: 25px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: left;
+        height: 305px;
       }
     }
   }
+}
+
+.card-container {
+  position: absolute; /* Ensure the container stays within the layout */
+  overflow: hidden; /* Keep overflow hidden while the animation runs */
+  width: 100%; /* Adjust based on parent container */
+  max-width: 42%; /* Optional: Limit the container width */
+  height: 300px; /* Same height as the cards */
+}
+
+.cards {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  animation: scrollCards 10s linear infinite; /* Animation for smooth scrolling */
+}
+
+.cards li {
+  min-width: 200px;
+  height: 300px;
+  border-radius: 15px;
+  background: #ccc;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border: 1px solid white;
+}
+
+/* Keyframes for horizontal scrolling */
+@keyframes scrollCards {
+  0% {
+    transform: translateX(0); /* Start from the initial position */
+  }
+  100% {
+    transform: translateX(-100%); /* Scroll to the left end */
+  }
+}
+
+.card-container:hover .cards {
+  animation-play-state: paused; /* Pause the animation on hover */
+}
+
+/* Hover effect on each card */
+.card-container  .card li:hover {
+  transform: scale(1.01); /* Zoom in hovered card */
+  z-index: 2; /* Bring the hovered card to the front */
+}
+
+/* Shrink other cards when one is hovered */
+.card-container  li:not(:hover) {
+  transform: scale(0.99); /* Shrink non-hovered cards */
+  opacity: 0.7; /* Optional: Make non-hovered cards slightly transparent */
+}

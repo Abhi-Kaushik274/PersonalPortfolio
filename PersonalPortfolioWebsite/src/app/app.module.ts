@@ -8,11 +8,12 @@ import { ExperienceCardComponent } from './experience-card/experience-card.compo
 import { ProjectCardComponent } from './project-card/project-card.component'; // Import standalone component
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, ExperienceCardComponent, ProjectCardComponent], // Remove DashboardCardComponent from declarations
+  declarations: [AppComponent, NavBarComponent, ProjectCardComponent], // Remove DashboardCardComponent from declarations
   imports: [
     BrowserModule,
     AppRoutingModule,
     DashboardCardComponent, // Add the standalone component to imports
+    ExperienceCardComponent
   ],
   providers: [],
   bootstrap: [AppComponent],

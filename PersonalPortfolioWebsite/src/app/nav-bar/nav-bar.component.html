@@ -1,25 +1,25 @@
 <div class="custom-navbar">
-    <div class="custom-navbar__logo">
-        <img src="../../assets/images/DashboardLogo.png" alt="Ethereal Logo" class="custom-navbar__logo-img" />
-    </div>
+  <div class="custom-navbar__logo">
+    <img 
+    [src]="isDarkMode ? '../../assets/images/DarkModeDashboardLogo.png' : '../../assets/images/LightModeDashboardLogo.png'" 
+    alt="Ethereal Logo" 
+    class="custom-navbar__logo-img" 
+  />
   
-    <div class="custom-navbar__menu">
-      <span *ngFor="let item of menuItems" [class.active]="activeItem === item"
-        (click)="setActiveItem(item)" class="custom-navbar__menu-item">
-        {{ item }}
-      </span>
-    </div>
-  
-    <div class="custom-navbar__actions">
-      <button class="custom-navbar__actions-btn"><i class="bi bi-moon-fill"></i></button>
-      <button class="custom-navbar__actions-btn"><i class="bi bi-badge-3d"></i></button>
-      <!-- <button class="custom-navbar__actions-btn"><i class="fa-brands fa-unity"></i></button> -->
-      <!-- <i class="fa-brands fa-unity"></i> -->
-      <img src="../../assets/images/Default.png" alt="User Avatar" class="custom-navbar__avatar" style="width: 40px; height: 40px; border-radius: 50%;" />
-    </div>  
-  </div>  
-  
-  <!-- Conditionally show profile card -->
-  <div *ngIf="isProfileCardVisible" class="profile-card-overlay">
-    <!-- <app-profile-card #profileCard></app-profile-card> -->
   </div>
+
+  <div class="custom-navbar__menu">
+    <span *ngFor="let item of menuItems" [class.active]="activeItem === item"
+      (click)="setActiveItem(item)" class="custom-navbar__menu-item" [ngStyle]="{'color': isDarkMode ? 'white' : ''}">
+      {{ item }}
+    </span>
+  </div>
+
+  <div class="custom-navbar__actions">
+    <button class="custom-navbar__actions-btn" (click)="toggleTheme()">
+      <i [class]="isDarkMode ? 'bi bi-sun-fill' : 'bi bi-moon-fill'" [ngStyle]="{'color': isDarkMode ? 'white' : ''}"></i>
+    </button>
+    <button class="custom-navbar__actions-btn"><i class="bi bi-badge-3d" [ngStyle]="{'color': isDarkMode ? 'white' : ''}"></i></button>
+    <img src="../../assets/images/Default.png" alt="User Avatar" class="custom-navbar__avatar" style="width: 40px; height: 40px; border-radius: 50%;" />
+  </div>  
+</div>

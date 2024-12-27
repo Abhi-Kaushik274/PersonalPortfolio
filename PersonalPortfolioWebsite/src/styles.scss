@@ -1,5 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
-body{
-    background-color: #1e1f29;
+body {
+    background-color: #ffffff; /* Light background */
+    color: #1e202a; /* Dark text for contrast */
     font-family: 'Inter', sans-serif;
-}
+  }
+  
+  body.light-mode {
+    background-color: whitesmoke;
+    color: #1e202a;
+  }
+  
+  body.dark-mode {
+    background-color: #1e1f29;
+    color: #ffffff;
+  }

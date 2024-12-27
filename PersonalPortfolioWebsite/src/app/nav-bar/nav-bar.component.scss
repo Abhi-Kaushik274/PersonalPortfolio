@@ -1,89 +1,192 @@
+// .custom-navbar {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     padding: 10px 20px;
+//     // background: linear-gradient(90deg, #1e202a, #141517);
+//     background: transparent;
+//     border-radius: 16px;
+//     color: #ffffff;
+  
+//     &__logo {
+//       display: flex;
+//       align-items: center;
+  
+//       &-img {
+//         width: auto;
+//         height: 36px;
+//         margin-right: 8px;
+//       }
+//     }
+  
+//     &__menu {
+//       display: flex;
+//       gap: 16px;
+//       background-color: rgba(255, 255, 255, 0.1);
+//       padding: 6px 12px;
+//       border-radius: 50px;
+  
+//       &-item {
+//         padding: 8px 16px;
+//         font-size: 12px;
+//         font-weight: 500;
+//         color: rgba(255, 255, 255, 0.8);
+//         border-radius: 50px;
+//         cursor: pointer;
+//         transition: all 0.3s ease;
+  
+//         &.active {
+//           background-color: #ffffff;
+//           color: #1e202a;
+//           font-weight: bold;
+//         }
+  
+//         &:hover {
+//           background-color: rgba(255, 255, 255, 0.2);
+//           color: #ffffff;
+//         }
+//       }
+//     }
+  
+//     &__actions {
+//       display: flex;
+//       align-items: center;
+//       gap: 16px;
+  
+//       &-btn {
+//         width: 40px;
+//         height: 40px;
+//         background-color: rgba(255, 255, 255, 0.1);
+//         border-radius: 50%;
+//         border: none;
+//         cursor: pointer;
+//         transition: all 0.3s ease;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         color: #ffffff;
+//         font-size: 18px;
+  
+//         i {
+//           font-size: 18px; /* Icon size */
+//         }
+  
+//         &:hover {
+//           background-color: rgba(255, 255, 255, 0.2);
+//         }
+//       }
+  
+//       &-avatar {
+//         width: 20px;
+//         height: 20px;
+//         border-radius: 50%;
+//         object-fit: cover;
+//         border: 2px solid rgba(255, 255, 255, 0.3);
+//       }
+//     }
+// }
+
+// /* Profile Card Overlay */
+// .profile-card-overlay {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   z-index: 9999;
+// }
+
+
+/* Navbar Styles (light mode overrides) */
 .custom-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: transparent;
+  border-radius: 16px;
+  color: #1e202a; /* Dark text color for light mode */
+  
+  &__logo {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    // background: linear-gradient(90deg, #1e202a, #141517);
-    background: transparent;
-    border-radius: 16px;
-    color: #ffffff;
-  
-    &__logo {
-      display: flex;
-      align-items: center;
-  
-      &-img {
-        width: auto;
-        height: 36px;
-        margin-right: 8px;
-      }
+
+    &-img {
+      width: auto;
+      height: 36px;
+      margin-right: 8px;
     }
-  
-    &__menu {
-      display: flex;
-      gap: 16px;
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 6px 12px;
+  }
+
+  &__menu {
+    display: flex;
+    gap: 16px;
+    background-color: rgba(0, 0, 0, 0.1); /* Lighter background */
+    padding: 6px 12px;
+    border-radius: 50px;
+
+    &-item {
+      padding: 8px 16px;
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 0.7); /* Darker color for light mode */
       border-radius: 50px;
-  
-      &-item {
-        padding: 8px 16px;
-        font-size: 12px;
-        font-weight: 500;
-        color: rgba(255, 255, 255, 0.8);
-        border-radius: 50px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-  
-        &.active {
-          background-color: #ffffff;
-          color: #1e202a;
-          font-weight: bold;
-        }
-  
-        &:hover {
-          background-color: rgba(255, 255, 255, 0.2);
-          color: #ffffff;
-        }
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &.active {
+        background-color: #1e202a; /* Dark background for active item */
+        color: #ffffff;
+        font-weight: bold;
+      }
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        color: #1e202a;
       }
     }
-  
-    &__actions {
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    &-btn {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(0, 0, 0, 0.1); /* Light background */
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
       display: flex;
       align-items: center;
-      gap: 16px;
-  
-      &-btn {
-        width: 40px;
-        height: 40px;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        border: none;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #ffffff;
-        font-size: 18px;
-  
-        i {
-          font-size: 18px; /* Icon size */
-        }
-  
-        &:hover {
-          background-color: rgba(255, 255, 255, 0.2);
-        }
+      justify-content: center;
+      color: #1e202a; /* Dark icon color for light mode */
+      font-size: 18px;
+
+      i {
+        font-size: 18px; /* Icon size */
       }
-  
-      &-avatar {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid rgba(255, 255, 255, 0.3);
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.2);
       }
     }
+
+    &-avatar {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(0, 0, 0, 0.3); /* Darker border for light mode */
+    }
+  }
 }
 
 /* Profile Card Overlay */
@@ -98,15 +201,4 @@
   justify-content: center;
   align-items: center;
   z-index: 9999;
-}
-
-/* Style for profile card component */
-app-profile-card {
-  z-index: 10000;
-  /* Any specific styles for your profile card */
-}
-
-
-.profile-card-overlay.active ~ body {
-  filter: blur(5px); /* Apply the blur effect */
 }

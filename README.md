@@ -1,2 +1,2 @@
-# RersonalPortfolio
+# PersonalPortfolio
 My Personal Profile
